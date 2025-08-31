@@ -52,9 +52,9 @@ echo -e "${YELLOW}[+] Adding user '$USER_NAME' to 'libvirt' group...${NC}"
 sudo usermod -aG libvirt "$USER_NAME"
 
 # 6. Download Ubuntu Cloud image if not already downloaded or if corrupted
-IMG_NAME="jammy-server-cloudimg-amd64.img"
-IMG_URL="https://cloud-images.ubuntu.com/jammy/current/$IMG_NAME"
-SHA256SUM_URL="https://cloud-images.ubuntu.com/jammy/current/SHA256SUMS"
+IMG_NAME="noble-server-cloudimg-amd64.img"
+IMG_URL="https://cloud-images.ubuntu.com/noble/current/$IMG_NAME"
+SHA256SUM_URL="https://cloud-images.ubuntu.com/noble/current/SHA256SUMS"
 
 DOWNLOAD_IMAGE() {
   echo -e "${YELLOW}[+] Downloading Ubuntu image...${NC}"

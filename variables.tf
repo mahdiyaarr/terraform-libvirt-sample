@@ -1,41 +1,28 @@
-variable "ubuntu_18_img_url" {
-  description = "Path or URL to the Ubuntu image"
-  default     = "https://cloud-images.ubuntu.com/jammy/current/jammy-server-cloudimg-amd64.img"
-}
-
-variable "disk_size" {
-  description = "Disk size in bytes for each VM"
+variable "vm_count" {
+  description = "VM counts"
   type        = number
-  default     = 10737418240
+  default     = 3
 }
 
-variable "vms" {
-  description = "Map of VM configurations"
-  type = map(object({
-    vm_hostname = string
-    memory      = number
-    vcpu        = number
-  }))
-  default = {
-    "vm1" = {
-      vm_hostname = "vm1"
-      memory      = 2048
-      vcpu        = 2
-    },
-    "vm2" = {
-      vm_hostname = "vm2"
-      memory      = 2048
-      vcpu        = 2
-    },
-    "vm3" = {
-      vm_hostname = "vm3"
-      memory      = 2048
-      vcpu        = 2
-    },
-    "vm4" = {
-      vm_hostname = "vm4"
-      memory      = 2048
-      vcpu        = 2
-    }
-  }
+variable "base_ip" {
+  description = "IP static octet"
+  type        = string
+  default     = "192.168.110."
+}
+
+variable "start_ip" {
+  description = "IP final octet started"
+  type        = number
+  default     = 10
+}
+
+variable "disk_path" {
+  description = "Disk path machine"
+  type        = string
+  default     = "<DEFAULT_PATH>"
+}
+
+variable "ubuntu_24_img_url" {
+  description = "Path or URL to the Ubuntu image"
+  default     = "<DEFAULT_PATH>"
 }

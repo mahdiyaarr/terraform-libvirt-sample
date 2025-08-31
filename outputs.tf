@@ -1,7 +1,6 @@
-output "ips" {
-  description = "Map of VM names to their primary IP addresses"
-  value = {
-    for key, domain in libvirt_domain.domain_ubuntu :
-    key => domain.network_interface[0].addresses[0]
-  }
+output "vm_ips" {
+  value = [
+    for idx in range(var.vm_count) :
+    "${var.base_ip}${var.start_ip + idx}"
+  ]
 }
